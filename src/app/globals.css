@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9FAFB;
+    color: #374151;
+}
+
+.dashboard-card {
+    background-color: #FFFFFF;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05), 0 5px 10px -3px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #E5E7EB;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.07), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-3px);
+}
+
+.btn-sidebar {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #4B5563;
+}
+
+.btn-sidebar.active {
+    background-color: #E0F2FE;
+    color: #1D4ED8;
+    box-shadow: 0 4px 10px rgba(96, 165, 250, 0.2);
+}
+
+.btn-sidebar:not(.active):hover {
+    background-color: #F3F4F6;
+    color: #1F2937;
+}
+
+.btn-primary {
+    background-color: #3B82F6;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2563EB;
+}
+
+.btn-cancel {
+    background-color: #EF4444;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #DC2626;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #2563EB, #1D4ED8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.line-marker::before {
+    content: "•";
+    color: #3B82F6;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+
+.fade-in {
+    animation: fadeInAnimation 0.6s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 256px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: relative;
+        transform: translateX(0);
+        box-shadow: none;
+        flex-shrink: 0;
+        width: 256px;
+        border-right: 1px solid #E5E7EB;
+    }
+    .overlay {
+        display: none !important;
+    }
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.scrollable-content {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .scrollable-content {
+        padding: 2rem;
+    }
+}
