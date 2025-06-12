@@ -513,11 +513,13 @@ export default function HomePage() {
                     <div className="text-lg font-medium text-gray-800 space-y-1">
                       <p><strong>Nama:</strong> Riki</p>
                       <p><strong>Email:</strong> admin@example.com</p>
-                      <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
-                    </div>
-                  </div>
-              </section>
-            )}
+{activeTab === 'contact' && (
+  <section>
+    <div>
+      <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
+    </div>
+  </section>
+)}
 
             {/* Placeholder for unused sidebar items (visible only when active) */}
             {activeTab === 'placeholder' && (
