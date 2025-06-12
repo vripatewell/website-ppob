@@ -5,7 +5,7 @@ import {
   MERCHANT_ID_ORDER_KUOTA,
   API_ORDER_KUOTA,
   QRIS_ORDER_KUOTA, // Untuk demo, tapi idealnya QRIS dari respons API OrderKuota
-} from './src/lib/constants';
+} from '../../../lib/constants';
 
 export async function POST(req) {
   try {
