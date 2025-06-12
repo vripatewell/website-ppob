@@ -1,7 +1,7 @@
 
 // src/app/api/payment-status/route.js
 import { NextResponse } from 'next/server';
-import { API_ORDER_KUOTA } from './src/lib/constants';
+import { API_ORDER_KUOTA } from '../../../lib/constants';
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
