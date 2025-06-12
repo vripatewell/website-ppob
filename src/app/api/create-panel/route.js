@@ -7,7 +7,7 @@ import {
   LOCATION_ID_V3,
   DOMAIN_V3,
   API_KEY_V3, // API Key ptla (Application API Key)
-} from './src/lib/constants';
+} from '../../../lib/constants';
 
 export async function POST(req) {
   try {
