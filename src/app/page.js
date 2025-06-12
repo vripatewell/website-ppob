@@ -546,11 +546,16 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
+</section>
+            )}
+          </div>
+        </div>
+      </div> {/* ← Tutup .flex.flex-1 */}
       <footer className="text-center text-gray-500 mt-auto p-4 text-sm bg-white border-t border-gray-100">
         <p>&copy; <span id="currentYear"></span> PPOB Panel Otomatis. Semua Hak Dilindungi.</p>
         <p className="mt-1">Melayani Kebutuhan Panel Hosting Anda dengan Cepat dan Aman.</p>
       </footer>
-    </div>
+    </div> {/* ← Tutup .flex.flex-col.min-h-screen */}
   );
 }
 
